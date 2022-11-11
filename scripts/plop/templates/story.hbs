@@ -1,0 +1,31 @@
+import React, { ComponentProps } from 'react'
+import { ComponentMeta, Story } from '@storybook/react'
+import base from 'paths.macro';
+import { atomicDir } from '@lib/storybook'
+
+import {{pascalCase name}}Component from './{{pascalCase name}}'
+
+export default {
+  title: `${atomicDir(base)}/{{pascalCase name}}`,
+  component: {{pascalCase name}}Component,
+} as ComponentMeta<typeof {{pascalCase name}}Component>
+
+type ExtraProps = { containerWidth: number }
+type StoryProps = ComponentProps<typeof {{pascalCase name}}Component> & ExtraProps
+
+const Template: Story<StoryProps> = (args) => {
+  const { containerWidth, ...rest } = args
+  return (
+    <div className="p-20" style=\{{ maxWidth: containerWidth }}>
+      <{{pascalCase name}}Component {...rest} />
+    </div>
+  )
+}
+
+export const {{pascalCase name}} = Template.bind({})
+
+{{pascalCase name}}.args = {
+  // Component Props
+  // Extra Props
+  containerWidth: 1000,
+}

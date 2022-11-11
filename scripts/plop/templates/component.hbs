@@ -1,0 +1,16 @@
+import { FC } from 'react'
+
+interface I{{pascalCase name}}Props {
+  content?: string
+}
+
+const {{pascalCase name}}: FC<I{{pascalCase name}}Props> = ({
+  content = '{{pascalCase name}} Component',
+}) => {
+  return (
+    <div className="w-full bg-crimson">
+      <h1 className="heading-xxl text-center">{content}</h1>
+    </div>
+  )
+}
+export default {{pascalCase name}}
